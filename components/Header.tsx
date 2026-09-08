@@ -79,12 +79,17 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <a
-            href={site.phone.href}
-            className="font-display text-sm tracking-wide text-brand-bright transition hover:text-white"
-          >
-            {site.phone.display}
-          </a>
+          <div className="flex flex-col items-end gap-0.5">
+            {site.phones.map((phone) => (
+              <a
+                key={phone.href}
+                href={phone.href}
+                className="font-display text-sm tracking-wide text-brand-bright transition hover:text-white"
+              >
+                {phone.display}
+              </a>
+            ))}
+          </div>
           <Link
             href="/contact"
             className="bg-brand px-4 py-2 text-sm font-semibold tracking-wide text-white transition hover:bg-brand-bright"
@@ -140,12 +145,15 @@ export function Header() {
             >
               Demander un devis
             </Link>
-            <a
-              href={site.phone.href}
-              className="mt-2 bg-brand px-4 py-3 text-center font-display text-lg tracking-wide text-white"
-            >
-              {site.phone.display}
-            </a>
+            {site.phones.map((phone) => (
+              <a
+                key={phone.href}
+                href={phone.href}
+                className="mt-2 bg-brand px-4 py-3 text-center font-display text-lg tracking-wide text-white"
+              >
+                {phone.display}
+              </a>
+            ))}
           </div>
         </div>
       ) : null}

@@ -33,13 +33,16 @@ export function Footer() {
           </Link>
         </nav>
 
-        <div className="min-w-0 text-sm break-words text-white/55">
-          <a
-            href={site.phone.href}
-            className="font-display block text-xl tracking-wide text-brand-bright hover:text-white"
-          >
-            {site.phone.display}
-          </a>
+        <div className="min-w-0 space-y-1 text-sm break-words text-white/55">
+          {site.phones.map((phone) => (
+            <a
+              key={phone.href}
+              href={phone.href}
+              className="font-display block text-xl tracking-wide text-brand-bright hover:text-white"
+            >
+              {phone.display}
+            </a>
+          ))}
           <AddressLink className="mt-2 block underline-offset-4 hover:text-brand-bright hover:underline">
             {site.address.street}
             <br />

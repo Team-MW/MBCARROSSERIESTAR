@@ -65,7 +65,7 @@ const jsonLd = {
   description: site.description,
   url: site.url,
   email: site.email,
-  telephone: site.phone.href.replace("tel:", ""),
+  telephone: site.phones.map((phone) => phone.href.replace("tel:", "")),
   image: [`${site.url}/brand/logo-hero.png`, `${site.url}/brand/app-icon.png`],
   logo: `${site.url}/brand/logo-mark.png`,
   priceRange: "€€",

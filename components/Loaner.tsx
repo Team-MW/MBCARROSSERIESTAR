@@ -29,12 +29,17 @@ export function Loaner() {
           <p className="mt-3 text-sm text-white/50">
             À demander au devis ou par téléphone.
           </p>
-          <a
-            href={site.phone.href}
-            className="mt-6 inline-flex border border-white/20 px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition hover:border-brand hover:bg-white/5"
-          >
-            Réserver au {site.phone.display}
-          </a>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {site.phones.map((phone) => (
+              <a
+                key={phone.href}
+                href={phone.href}
+                className="inline-flex border border-white/20 px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition hover:border-brand hover:bg-white/5"
+              >
+                Réserver au {phone.display}
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="relative mx-auto h-[250px] w-full max-w-lg sm:h-[300px]">

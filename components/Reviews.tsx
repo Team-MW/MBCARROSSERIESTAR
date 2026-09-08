@@ -115,9 +115,14 @@ export function Reviews({ preview = false, showIntro = true }: ReviewsProps) {
                 {site.address.full}
               </AddressLink>
               <span className="mx-2 text-white/25">·</span>
-              <a href={site.phone.href} className="text-brand-bright hover:text-white">
-                {site.phone.display}
-              </a>
+              {site.phones.map((phone, index) => (
+                <span key={phone.href}>
+                  {index > 0 ? <span className="mx-2 text-white/25">·</span> : null}
+                  <a href={phone.href} className="text-brand-bright hover:text-white">
+                    {phone.display}
+                  </a>
+                </span>
+              ))}
             </p>
             <a
               href={site.googleSearch}

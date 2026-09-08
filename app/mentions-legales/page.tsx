@@ -31,7 +31,7 @@ const blocks = [
     rows: [
       ["Directeur de la publication", `${legal.director}, ${legal.directorRole}`],
       ["Contact", site.email],
-      ["Téléphone", site.phone.display],
+      ["Téléphone", site.phones.map((phone) => phone.display).join(" · ")],
     ],
   },
   {
@@ -101,9 +101,17 @@ export default function MentionsLegalesPage() {
                           {value}
                         </a>
                       ) : label === "Téléphone" ? (
-                        <a href={site.phone.href} className="hover:text-brand-bright">
-                          {value}
-                        </a>
+                        <span className="flex flex-col gap-1 sm:items-end">
+                          {site.phones.map((phone) => (
+                            <a
+                              key={phone.href}
+                              href={phone.href}
+                              className="hover:text-brand-bright"
+                            >
+                              {phone.display}
+                            </a>
+                          ))}
+                        </span>
                       ) : (
                         value
                       )}

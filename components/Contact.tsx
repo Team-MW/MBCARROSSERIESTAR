@@ -17,12 +17,17 @@ export function Contact() {
                 <p className="text-xs tracking-[0.2em] text-white/45 uppercase">
                   Téléphone
                 </p>
-                <a
-                  href={site.phone.href}
-                  className="font-display mt-4 block text-2xl tracking-wide text-brand-bright hover:text-white sm:text-3xl"
-                >
-                  {site.phone.display}
-                </a>
+                <div className="mt-4 space-y-2">
+                  {site.phones.map((phone) => (
+                    <a
+                      key={phone.href}
+                      href={phone.href}
+                      className="font-display block text-2xl tracking-wide text-brand-bright hover:text-white sm:text-3xl"
+                    >
+                      {phone.display}
+                    </a>
+                  ))}
+                </div>
               </div>
               <div className="border border-white/10 bg-black/30 p-5">
                 <p className="text-xs tracking-[0.2em] text-white/45 uppercase">

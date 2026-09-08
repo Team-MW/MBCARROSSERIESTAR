@@ -53,21 +53,20 @@ export function Hero() {
           <AddressLink className="text-sm break-words text-white/55 underline-offset-4 transition hover:text-brand-bright hover:underline">
             {site.address.full}
           </AddressLink>
-          <a
-            href={site.phone.href}
-            className="font-display text-[clamp(1.85rem,7vw,3.25rem)] leading-none tracking-wide text-brand-bright transition hover:text-white"
-          >
-            {site.phone.display}
-          </a>
+          <div className="flex flex-col items-center gap-2 sm:gap-3">
+            {site.phones.map((phone) => (
+              <a
+                key={phone.href}
+                href={phone.href}
+                className="font-display text-[clamp(1.85rem,7vw,3.25rem)] leading-none tracking-wide text-brand-bright transition hover:text-white"
+              >
+                {phone.display}
+              </a>
+            ))}
+          </div>
         </div>
 
-        <div className="animate-rise-late mx-auto mt-7 flex w-full max-w-md flex-col justify-center gap-3 sm:mt-8 sm:max-w-none sm:flex-row">
-          <a
-            href={site.phone.href}
-            className="red-glow inline-flex items-center justify-center bg-brand px-7 py-3.5 font-semibold tracking-wide text-white transition hover:bg-brand-bright"
-          >
-            Appeler {site.phone.display}
-          </a>
+        <div className="animate-rise-late mx-auto mt-7 flex w-full max-w-md flex-col justify-center gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:flex-wrap">
           <Link
             href="/contact"
             className="inline-flex items-center justify-center border border-white/20 bg-black/30 px-7 py-3.5 font-semibold tracking-wide text-white transition hover:border-white/40 hover:bg-white/10"

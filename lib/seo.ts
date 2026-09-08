@@ -11,13 +11,13 @@ export const pages = {
     path: "/prestations",
     title: "Prestations",
     description:
-      "Carrosserie, peinture, tôlerie et mécanique à Cornebarrieu. Chocs, mise en teinte, réalisations avant/après. Devis MB Carrosserie Star — 07 66 57 39 76.",
+      "Carrosserie, peinture, tôlerie et mécanique à Cornebarrieu. Chocs, mise en teinte, réalisations avant/après. Devis MB Carrosserie Star — 07 66 57 39 76 · 07 80 24 68 73.",
   },
   atelier: {
     path: "/atelier",
     title: "L’atelier",
     description:
-      "Atelier MB Carrosserie Star à Cornebarrieu : équipe de proximité, véhicule de prêt, horaires Lun–Sam. 14 Chem. Saint-Roch, Toulouse Nord — 07 66 57 39 76.",
+      "Atelier MB Carrosserie Star à Cornebarrieu : équipe de proximité, véhicule de prêt, horaires Lun–Sam. 14 Chem. Saint-Roch, Toulouse Nord — 07 66 57 39 76 · 07 80 24 68 73.",
   },
   avis: {
     path: "/avis",
@@ -29,7 +29,7 @@ export const pages = {
     path: "/contact",
     title: "Contact",
     description:
-      "Devis carrosserie à Cornebarrieu : formulaire en ligne, appel ou passage à l’atelier. 07 66 57 39 76 — 14 Chem. Saint-Roch. Lun–Ven 9h–18h, samedi 9h–17h.",
+      "Devis carrosserie à Cornebarrieu : formulaire en ligne, appel ou passage à l’atelier. 07 66 57 39 76 · 07 80 24 68 73 — 14 Chem. Saint-Roch. Lun–Ven 9h–18h, samedi 9h–17h.",
   },
   mentions: {
     path: "/mentions-legales",

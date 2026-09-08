@@ -40,10 +40,17 @@ export function Footer() {
           >
             {site.phone.display}
           </a>
-          <AddressLink className="mt-2 inline-block hover:text-brand-bright">
-            {site.address.full}
+          <AddressLink className="mt-2 block underline-offset-4 hover:text-brand-bright hover:underline">
+            {site.address.street}
+            <br />
+            {site.address.postalCode} {site.address.city}
           </AddressLink>
-          <p className="mt-1 break-all">{site.email}</p>
+          <a
+            href={`mailto:${site.email}`}
+            className="mt-2 block break-all underline-offset-4 hover:text-brand-bright hover:underline"
+          >
+            {site.email}
+          </a>
         </div>
       </div>
       <div className="border-t border-white/10">

@@ -1,6 +1,8 @@
 export const site = {
   name: "MB Carrosserie Star",
   tagline: "Carrosserie · Peinture · Tôlerie · Mécanique",
+  description:
+    "Carrosserie, peinture, tôlerie et mécanique à Cornebarrieu. MB Carrosserie Star : devis, délais tenus, véhicule de prêt. 14 Chem. Saint-Roch — 07 66 57 39 76.",
   city: "Cornebarrieu",
   address: {
     street: "14 Chem. Saint-Roch",
@@ -13,10 +15,10 @@ export const site = {
       "https://maps.google.com/maps?q=14%20Chem.%20Saint-Roch%2C%2031700%20Cornebarrieu&t=&z=16&ie=UTF8&iwloc=&output=embed",
   },
   email: "MbCarrosseriestar@gmail.com",
-  phones: [
-    { display: "07 66 57 39 76", href: "tel:+33766573976" },
-    { display: "07 80 24 68 73", href: "tel:+33780246873" },
-  ],
+  phone: {
+    display: "07 66 57 39 76",
+    href: "tel:+33766573976",
+  },
   hours: [
     { days: "Lun. – Ven.", hours: "9h – 18h" },
     { days: "Samedi", hours: "9h – 17h" },

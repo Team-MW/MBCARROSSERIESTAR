@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AddressLink } from "@/components/AddressLink";
 import { Logo } from "@/components/Logo";
 import { nav, site } from "@/lib/site";
 
@@ -34,15 +33,7 @@ export function Footer() {
         </nav>
 
         <div className="min-w-0 text-sm break-words text-white/55">
-          <a
-            href={site.phone.href}
-            className="font-display block text-xl tracking-wide text-brand-bright hover:text-white"
-          >
-            {site.phone.display}
-          </a>
-          <AddressLink className="mt-2 inline-block hover:text-brand-bright">
-            {site.address.full}
-          </AddressLink>
+          <p>{site.address.full}</p>
           <p className="mt-1 break-all">{site.email}</p>
         </div>
       </div>

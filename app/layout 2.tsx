@@ -23,50 +23,26 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   viewportFit: "cover" as const,
-  themeColor: "#070707",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mbcarrosseriestar.fr"),
-  applicationName: site.name,
   title: {
     default: "MB Carrosserie Star | Carrosserie à Cornebarrieu",
     template: "%s | MB Carrosserie Star",
   },
-  description: site.description,
-  keywords: [
-    "carrosserie Cornebarrieu",
-    "peinture automobile Toulouse",
-    "tôlerie auto",
-    "mécanique automobile",
-    "MB Carrosserie Star",
-    "devis carrosserie",
-    "réparation auto Toulouse Nord",
-    "carrosserie 31700",
-  ],
-  authors: [{ name: site.name }],
-  creator: site.name,
-  robots: { index: true, follow: true },
+  description:
+    "Atelier de carrosserie, peinture, tôlerie et mécanique à Cornebarrieu. Devis, délais tenus, finitions soignées. 14 Chem. Saint-Roch.",
+  metadataBase: new URL("https://mbcarrosseriestar.fr"),
+  icons: {
+    icon: "/brand/logo-mark.png",
+  },
   openGraph: {
-    title: "MB Carrosserie Star | Carrosserie à Cornebarrieu",
-    description: site.description,
+    title: "MB Carrosserie Star",
+    description:
+      "Carrosserie, peinture, tôlerie et mécanique à Cornebarrieu — Toulouse Nord.",
     locale: "fr_FR",
     type: "website",
-    siteName: site.name,
-    images: [
-      {
-        url: "/brand/app-icon.png",
-        width: 512,
-        height: 512,
-        alt: "MB Carrosserie Star",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary",
-    title: "MB Carrosserie Star | Carrosserie à Cornebarrieu",
-    description: site.description,
-    images: ["/brand/app-icon.png"],
+    images: ["/brand/logo-hero.png"],
   },
 };
 
@@ -75,7 +51,7 @@ const jsonLd = {
   "@type": "AutoBodyShop",
   name: site.name,
   email: site.email,
-  telephone: site.phone.href.replace("tel:", ""),
+  telephone: site.phones.map((phone) => phone.href.replace("tel:", "")),
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
@@ -84,7 +60,7 @@ const jsonLd = {
     addressCountry: "FR",
   },
   url: "https://mbcarrosseriestar.fr",
-  image: "/brand/app-icon.png",
+  image: "/brand/logo-hero.png",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

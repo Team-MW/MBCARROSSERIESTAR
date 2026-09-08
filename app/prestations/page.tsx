@@ -6,7 +6,7 @@ import { Services } from "@/components/Services";
 export const metadata: Metadata = {
   title: "Prestations",
   description:
-    "Carrosserie, peinture, tôlerie et mécanique à Cornebarrieu : réparations, mise en teinte, délais tenus.",
+    "Carrosserie, peinture auto, tôlerie et mécanique à Cornebarrieu. Réparations, mise en teinte, chocs et sinistres. Devis chez MB Carrosserie Star.",
 };
 
 export default function PrestationsPage() {

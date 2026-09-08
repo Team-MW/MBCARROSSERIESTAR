@@ -14,18 +14,18 @@ export function CtaBand() {
           </p>
         </div>
         <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-          <a
-            href={site.phone.href}
-            className="red-glow inline-flex items-center justify-center bg-brand px-6 py-3.5 font-semibold tracking-wide text-white hover:bg-brand-bright"
-          >
-            {site.phone.display}
-          </a>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center border border-white/20 px-6 py-3.5 font-semibold tracking-wide text-white hover:bg-white/10"
+            className="red-glow inline-flex items-center justify-center bg-brand px-6 py-3.5 font-semibold tracking-wide text-white hover:bg-brand-bright"
           >
             Demander un devis
           </Link>
+          <a
+            href={site.phones[0].href}
+            className="inline-flex items-center justify-center border border-white/20 px-6 py-3.5 font-semibold tracking-wide text-white hover:bg-white/10"
+          >
+            {site.phones[0].display}
+          </a>
         </div>
       </div>
     </section>

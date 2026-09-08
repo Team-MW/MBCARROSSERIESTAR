@@ -6,7 +6,7 @@ import { Reviews } from "@/components/Reviews";
 export const metadata: Metadata = {
   title: "Avis clients",
   description:
-    "Avis clients MB Carrosserie Star à Cornebarrieu : qualité, délais tenus, peinture impeccable.",
+    "Avis Google 5★ pour MB Carrosserie Star à Cornebarrieu : peinture soignée, délais tenus, accueil de proximité à Toulouse Nord.",
 };
 
 export default function AvisPage() {

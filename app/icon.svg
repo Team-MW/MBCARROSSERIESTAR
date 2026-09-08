@@ -1,10 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#070707"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="MB Carrosserie Star">
+  <rect width="512" height="512" fill="#070707"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="48%" r="42%">
+      <stop offset="0%" stop-color="#e10600" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#e10600" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="star" x1="50%" y1="8%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ff3b3b"/>
+      <stop offset="45%" stop-color="#e10600"/>
+      <stop offset="100%" stop-color="#8b0000"/>
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="210" fill="url(#glow)"/>
   <polygon
-    points="32 8 39.4 24.2 57 25.6 43.5 37.2 47.6 54.5 32 45.8 16.4 54.5 20.5 37.2 7 25.6 24.6 24.2"
-    fill="#8B0000"
-    stroke="#FF1A1A"
-    stroke-width="2"
+    fill="url(#star)"
+    stroke="#ff1a1a"
+    stroke-width="10"
     stroke-linejoin="round"
+    points="256.0,60.0 305.4,188.0 442.4,195.4 335.9,282.0 371.2,414.6 256.0,340.0 140.8,414.6 176.1,282.0 69.6,195.4 206.6,188.0"
   />
 </svg>

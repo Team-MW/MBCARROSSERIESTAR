@@ -2,6 +2,7 @@ import { About } from "@/components/About";
 import { AtelierSection } from "@/components/AtelierPanel";
 import { CtaBand } from "@/components/CtaBand";
 import { Hero } from "@/components/Hero";
+import { Loaner } from "@/components/Loaner";
 import { Reviews } from "@/components/Reviews";
 import { Services } from "@/components/Services";
 import { TikToks } from "@/components/TikToks";
@@ -29,6 +30,7 @@ export default function Home() {
         </div>
       </section>
       <AtelierSection />
+      <Loaner />
       <TikToks />
       <Services preview />
       <About preview />

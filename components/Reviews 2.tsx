@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { AddressLink } from "@/components/AddressLink";
 import { reviews, site } from "@/lib/site";
 
 const avatarColors = [
@@ -111,12 +110,12 @@ export function Reviews({ preview = false, showIntro = true }: ReviewsProps) {
               <p className="text-sm text-white/55">{reviews.length} avis Google</p>
             </div>
             <p className="mt-4 text-sm text-white/55">
-              <AddressLink className="hover:text-white">
+              <a href={site.address.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 {site.address.full}
-              </AddressLink>
+              </a>
               <span className="mx-2 text-white/25">·</span>
-              <a href={site.phone.href} className="text-brand-bright hover:text-white">
-                {site.phone.display}
+              <a href={site.phones[0].href} className="text-brand-bright hover:text-white">
+                {site.phones[0].display}
               </a>
             </p>
             <a

@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --red: #e10600;
+  --red-bright: #ff1a1a;
+  --red-deep: #8b0000;
+  --bg: #070707;
+  --panel: #111111;
+  --line: rgba(255, 255, 255, 0.1);
+  --text: #f4f4f4;
+  --muted: #b3b3b3;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --color-brand: var(--red);
+  --color-brand-bright: var(--red-bright);
+  --color-muted: var(--muted);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-oswald);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.bg-carbon {
+  background-color: #070707;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.02) 0 1px,
+      transparent 1px 7px
+    );
+  background-size:
+    18px 18px,
+    18px 18px,
+    10px 10px;
+}
+
+.red-glow {
+  box-shadow:
+    0 0 0 1px rgba(225, 6, 0, 0.35),
+    0 0 28px rgba(225, 6, 0, 0.28);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.8s ease both;
+}
+
+.animate-rise-delay {
+  animation: rise 0.9s ease 0.12s both;
+}
+
+.animate-rise-late {
+  animation: rise 1s ease 0.24s both;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::marker {
+  content: "";
+}
+
+.review-track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.review-track::-webkit-scrollbar {
+  display: none;
+}
+
+.tiktok-track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tiktok-track::-webkit-scrollbar {
+  display: none;
+}

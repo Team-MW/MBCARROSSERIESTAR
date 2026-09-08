@@ -1,13 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { site } from "@/lib/site";
 
 export function QuoteForm() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [loaded, setLoaded] = useState(false);
   const src = `https://form.jotform.com/${site.jotformId}?isIframeEmbed=1`;
 
   useEffect(() => {
+    const fallback = window.setTimeout(() => setLoaded(true), 8000);
+
     function onMessage(event: MessageEvent) {
       if (typeof event.data !== "string") return;
 
@@ -20,9 +23,11 @@ export function QuoteForm() {
       switch (args[0]) {
         case "setHeight":
           iframe.style.height = `${args[1]}px`;
+          setLoaded(true);
           break;
         case "setMinHeight":
           iframe.style.minHeight = `${args[1]}px`;
+          setLoaded(true);
           break;
         case "scrollIntoView":
           iframe.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -38,19 +43,38 @@ export function QuoteForm() {
     }
 
     window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
+    return () => {
+      window.clearTimeout(fallback);
+      window.removeEventListener("message", onMessage);
+    };
   }, []);
 
   return (
-    <iframe
-      ref={iframeRef}
-      id={site.jotformId}
-      title="MB Carrosserie Star — formulaire de devis"
-      allow="geolocation; microphone; camera; fullscreen; payment"
-      src={src}
-      className="block w-full max-w-full border-0 bg-transparent"
-      style={{ height: 539 }}
-      scrolling="no"
-    />
+    <div className="relative min-h-[28rem] w-full">
+      {!loaded ? (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-black">
+          <span
+            className="h-11 w-11 animate-spin rounded-full border-[3px] border-white/15 border-t-brand-bright"
+            aria-hidden="true"
+          />
+          <p className="font-display text-sm tracking-[0.28em] text-white/55 uppercase">
+            Chargement
+          </p>
+        </div>
+      ) : null}
+      <iframe
+        ref={iframeRef}
+        id={site.jotformId}
+        title="MB Carrosserie Star — formulaire de devis"
+        allow="geolocation; microphone; camera; fullscreen; payment"
+        src={src}
+        onLoad={() => setLoaded(true)}
+        className={`block w-full max-w-full border-0 bg-transparent transition-opacity duration-300 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+        style={{ height: 539 }}
+        scrolling="no"
+      />
+    </div>
   );
 }

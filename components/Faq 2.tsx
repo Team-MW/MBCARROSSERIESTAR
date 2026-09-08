@@ -1,23 +1,5 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
-import { AddressLink } from "@/components/AddressLink";
-import { faqs, site } from "@/lib/site";
-
-function linkAddress(text: string): ReactNode {
-  const address = site.address.full;
-  const index = text.indexOf(address);
-  if (index === -1) return text;
-
-  return (
-    <>
-      {text.slice(0, index)}
-      <AddressLink className="text-white underline-offset-4 hover:text-brand-bright hover:underline">
-        {address}
-      </AddressLink>
-      {text.slice(index + address.length)}
-    </>
-  );
-}
+import { faqs } from "@/lib/site";
 
 const faqLd = {
   "@context": "https://schema.org",
@@ -68,7 +50,7 @@ export function Faq() {
                 </span>
               </summary>
               <p className="max-w-3xl pb-5 text-sm leading-relaxed text-white/65 sm:text-base">
-                {linkAddress(item.a)}
+                {item.a}
               </p>
             </details>
           ))}

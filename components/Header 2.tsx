@@ -70,20 +70,12 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <a
-            href={site.phone.href}
-            className="font-display text-sm tracking-wide text-brand-bright transition hover:text-white"
-          >
-            {site.phone.display}
-          </a>
-          <Link
-            href="/contact"
-            className="bg-brand px-4 py-2 text-sm font-semibold tracking-wide text-white transition hover:bg-brand-bright"
-          >
-            Devis
-          </Link>
-        </div>
+        <Link
+          href="/contact"
+          className="hidden bg-brand px-4 py-2 text-sm font-semibold tracking-wide text-white transition hover:bg-brand-bright lg:inline-flex"
+        >
+          Devis
+        </Link>
 
         <button
           type="button"
@@ -132,10 +124,10 @@ export function Header() {
               Demander un devis
             </Link>
             <a
-              href={site.phone.href}
-              className="mt-2 bg-brand px-4 py-3 text-center font-display text-lg tracking-wide text-white"
+              href={site.phones[0].href}
+              className="mt-2 border border-white/15 px-4 py-3 text-center text-white"
             >
-              {site.phone.display}
+              {site.phones[0].display}
             </a>
           </div>
         </div>

@@ -1,4 +1,3 @@
-import { AddressLink } from "@/components/AddressLink";
 import { QuoteForm } from "@/components/QuoteForm";
 import { site } from "@/lib/site";
 
@@ -13,16 +12,21 @@ export function Contact() {
 
           <div className="space-y-6">
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="border border-brand/40 bg-black/30 p-5">
+              <div className="border border-white/10 bg-black/30 p-5">
                 <p className="text-xs tracking-[0.2em] text-white/45 uppercase">
                   Téléphone
                 </p>
-                <a
-                  href={site.phone.href}
-                  className="font-display mt-4 block text-2xl tracking-wide text-brand-bright hover:text-white sm:text-3xl"
-                >
-                  {site.phone.display}
-                </a>
+                <div className="mt-4 space-y-3">
+                  {site.phones.map((phone) => (
+                    <a
+                      key={phone.href}
+                      href={phone.href}
+                      className="font-display block text-lg tracking-wide text-brand-bright hover:text-white sm:text-xl"
+                    >
+                      {phone.display}
+                    </a>
+                  ))}
+                </div>
               </div>
               <div className="border border-white/10 bg-black/30 p-5">
                 <p className="text-xs tracking-[0.2em] text-white/45 uppercase">
@@ -50,11 +54,16 @@ export function Contact() {
               <p className="text-xs tracking-[0.2em] text-white/45 uppercase">
                 Atelier
               </p>
-              <AddressLink className="mt-3 block text-white hover:text-brand-bright">
+              <a
+                href={site.address.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 block text-white hover:text-brand-bright"
+              >
                 {site.address.street}
                 <br />
                 {site.address.postalCode} {site.address.city}
-              </AddressLink>
+              </a>
               <a
                 href={`mailto:${site.email}`}
                 className="mt-3 block text-sm break-all text-white/70 hover:text-white"

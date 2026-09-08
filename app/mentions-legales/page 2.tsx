@@ -34,7 +34,7 @@ const blocks = [
     rows: [
       ["Directeur de la publication", `${legal.director}, ${legal.directorRole}`],
       ["Contact", site.email],
-      ["Téléphone", site.phone.display],
+      ["Téléphone", site.phones.map((phone) => phone.display).join(" / ")],
     ],
   },
   {
@@ -92,19 +92,6 @@ export default function MentionsLegalesPage() {
                         </a>
                       ) : label === "Contact" ? (
                         <a href={`mailto:${value}`} className="hover:text-brand-bright">
-                          {value}
-                        </a>
-                      ) : label === "Siège social" ? (
-                        <a
-                          href={site.address.mapsUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-brand-bright"
-                        >
-                          {value}
-                        </a>
-                      ) : label === "Téléphone" ? (
-                        <a href={site.phone.href} className="hover:text-brand-bright">
                           {value}
                         </a>
                       ) : (

@@ -54,6 +54,16 @@ export function Footer() {
           <Link href="/mentions-legales" className="text-white/55 hover:text-white">
             Mentions légales
           </Link>
+          {" · "}
+          Réalisé par{" "}
+          <a
+            href="https://microdidact.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/55 hover:text-white"
+          >
+            Microdidact
+          </a>
         </p>
       </div>
     </footer>

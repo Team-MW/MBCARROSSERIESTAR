@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { About } from "@/components/About";
-import { AtelierSection } from "@/components/AtelierPanel";
 import { CtaBand } from "@/components/CtaBand";
 import { Hero } from "@/components/Hero";
 import { Loaner } from "@/components/Loaner";
@@ -33,7 +32,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <AtelierSection />
       <Loaner />
       <TikToks />
       <Services preview />

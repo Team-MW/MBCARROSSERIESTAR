@@ -5,7 +5,7 @@ import { services, site } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="bg-carbon relative flex min-h-[70vh] items-center overflow-hidden pt-24 pb-14 sm:min-h-[80vh] sm:pt-28 sm:pb-20">
+    <section id="accueil" className="bg-carbon relative flex min-h-[70vh] items-center overflow-hidden pt-24 pb-14 sm:min-h-[80vh] sm:pt-28 sm:pb-20">
       <div className="pointer-events-none absolute inset-0">
         <Image
           src="/hero/fond.webp"

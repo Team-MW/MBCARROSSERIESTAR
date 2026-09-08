@@ -29,6 +29,13 @@ export function Header() {
     };
   }, [open]);
 
+  const goHome = () => {
+    setOpen(false);
+    if (pathname === "/") {
+      document.getElementById("accueil")?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
@@ -38,7 +45,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-4 sm:h-[4.5rem] sm:px-6">
-        <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3" onClick={() => setOpen(false)}>
+        <Link href="/#accueil" className="flex min-w-0 items-center gap-2 sm:gap-3" onClick={goHome}>
           <Logo size={44} priority className="h-8 w-8 shrink-0 sm:h-11 sm:w-11" />
           <span className="flex min-w-0 flex-col leading-none">
             <span className="font-display text-[12px] font-semibold tracking-[0.08em] text-brand-bright sm:text-base sm:tracking-[0.14em]">
@@ -53,13 +60,14 @@ export function Header() {
         <nav className="hidden items-center gap-7 lg:flex">
           {nav.map((item) => {
             const active =
-              item.href === "/"
+              item.href.startsWith("/#")
                 ? pathname === "/"
                 : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={item.href.startsWith("/#") ? goHome : undefined}
                 className={`text-sm tracking-wide transition-colors ${
                   active ? "text-brand-bright" : "text-white/75 hover:text-white"
                 }`}
@@ -114,6 +122,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={item.href.startsWith("/#") ? goHome : undefined}
                 className="font-display py-3 text-2xl tracking-wide text-white"
               >
                 {item.label}

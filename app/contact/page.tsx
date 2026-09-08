@@ -3,11 +3,9 @@ import { AddressLink } from "@/components/AddressLink";
 import { Contact } from "@/components/Contact";
 import { PageHero } from "@/components/PageHero";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Devis et rendez-vous chez MB Carrosserie Star à Cornebarrieu. 14 Chem. Saint-Roch, 07 66 57 39 76. Lun–Ven 9h–18h, samedi 9h–17h.",
-};
+import { pageMeta, pages } from "@/lib/seo";
+
+export const metadata: Metadata = pageMeta(pages.contact);
 
 export default function ContactPage() {
   return (

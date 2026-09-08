@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { About } from "@/components/About";
 import { AtelierSection } from "@/components/AtelierPanel";
 import { CtaBand } from "@/components/CtaBand";
@@ -6,6 +7,9 @@ import { Loaner } from "@/components/Loaner";
 import { Reviews } from "@/components/Reviews";
 import { Services } from "@/components/Services";
 import { TikToks } from "@/components/TikToks";
+import { pageMeta, pages } from "@/lib/seo";
+
+export const metadata: Metadata = pageMeta(pages.home);
 
 export default function Home() {
   return (

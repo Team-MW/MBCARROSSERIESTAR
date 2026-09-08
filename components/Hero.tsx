@@ -39,16 +39,17 @@ export function Hero() {
           ))}
         </ul>
 
-        <AddressLink className="animate-rise-late mt-5 inline-block text-sm break-words text-white/55 underline-offset-4 transition hover:text-brand-bright hover:underline sm:mt-6">
-          {site.address.full}
-        </AddressLink>
-
-        <a
-          href={site.phone.href}
-          className="animate-rise-late font-display mt-4 inline-block text-[clamp(1.85rem,7vw,3.25rem)] leading-none tracking-wide text-brand-bright transition hover:text-white"
-        >
-          {site.phone.display}
-        </a>
+        <div className="animate-rise-late mt-6 flex flex-col items-center gap-4 sm:mt-8 sm:gap-6">
+          <AddressLink className="text-sm break-words text-white/55 underline-offset-4 transition hover:text-brand-bright hover:underline">
+            {site.address.full}
+          </AddressLink>
+          <a
+            href={site.phone.href}
+            className="font-display text-[clamp(1.85rem,7vw,3.25rem)] leading-none tracking-wide text-brand-bright transition hover:text-white"
+          >
+            {site.phone.display}
+          </a>
+        </div>
 
         <div className="animate-rise-late mx-auto mt-7 flex w-full max-w-md flex-col justify-center gap-3 sm:mt-8 sm:max-w-none sm:flex-row">
           <a

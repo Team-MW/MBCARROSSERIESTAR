@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
+import { pageMeta, pages } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Mentions légales",
-  description:
-    "Mentions légales de MB Carrosserie Star, SARL à Cornebarrieu : SIREN, SIRET, RCS Toulouse, TVA, gérant.",
-};
+export const metadata: Metadata = pageMeta(pages.mentions);
 
 const { legal } = site;
 

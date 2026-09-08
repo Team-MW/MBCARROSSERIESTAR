@@ -36,7 +36,7 @@ export function Services({ preview = false, showIntro = true }: ServicesProps) {
           </>
         ) : null}
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ${showIntro ? "mt-12" : ""}`}>
           {services.map((service) => {
             const Icon = serviceIcons[service.id];
             return (

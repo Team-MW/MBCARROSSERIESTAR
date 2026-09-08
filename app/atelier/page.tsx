@@ -4,13 +4,10 @@ import { AddressLink } from "@/components/AddressLink";
 import { CtaBand } from "@/components/CtaBand";
 import { Loaner } from "@/components/Loaner";
 import { PageHero } from "@/components/PageHero";
+import { pageMeta, pages } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "L’atelier",
-  description:
-    "L’atelier MB Carrosserie Star à Cornebarrieu : carrosserie de proximité, devis clairs, délais tenus. 14 Chem. Saint-Roch, Toulouse Nord.",
-};
+export const metadata: Metadata = pageMeta(pages.atelier);
 
 export default function AtelierPage() {
   return (

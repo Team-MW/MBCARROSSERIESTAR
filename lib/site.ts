@@ -1,8 +1,9 @@
 export const site = {
   name: "MB Carrosserie Star",
   tagline: "Carrosserie · Peinture · Tôlerie · Mécanique",
+  url: "https://mbcarrosseriestar.fr",
   description:
-    "Carrosserie, peinture, tôlerie et mécanique à Cornebarrieu. MB Carrosserie Star : devis, délais tenus, véhicule de prêt. 14 Chem. Saint-Roch — 07 66 57 39 76.",
+    "Atelier de carrosserie à Cornebarrieu, près de Toulouse. Peinture, tôlerie, mécanique. Devis, délais tenus, véhicule de prêt. 14 Chem. Saint-Roch — 07 66 57 39 76.",
   city: "Cornebarrieu",
   address: {
     street: "14 Chem. Saint-Roch",

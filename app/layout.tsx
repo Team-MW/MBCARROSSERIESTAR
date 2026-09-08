@@ -4,7 +4,8 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileCallBar } from "@/components/MobileCallBar";
 import { SiteFaq } from "@/components/SiteFaq";
-import { site } from "@/lib/site";
+import { pageMeta, pages } from "@/lib/seo";
+import { reviews, site } from "@/lib/site";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -27,64 +28,69 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mbcarrosseriestar.fr"),
+  metadataBase: new URL(site.url),
   applicationName: site.name,
+  ...pageMeta(pages.home),
   title: {
-    default: "MB Carrosserie Star | Carrosserie à Cornebarrieu",
-    template: "%s | MB Carrosserie Star",
+    default: pages.home.title,
+    template: `%s | ${site.name}`,
   },
-  description: site.description,
   keywords: [
     "carrosserie Cornebarrieu",
-    "peinture automobile Toulouse",
-    "tôlerie auto",
-    "mécanique automobile",
+    "carrosserie Toulouse Nord",
+    "peinture automobile Cornebarrieu",
+    "tôlerie auto 31700",
+    "mécanique automobile Cornebarrieu",
     "MB Carrosserie Star",
     "devis carrosserie",
-    "réparation auto Toulouse Nord",
-    "carrosserie 31700",
+    "véhicule de prêt carrosserie",
   ],
-  authors: [{ name: site.name }],
+  authors: [{ name: site.name, url: site.url }],
   creator: site.name,
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: "MB Carrosserie Star | Carrosserie à Cornebarrieu",
-    description: site.description,
-    locale: "fr_FR",
-    type: "website",
-    siteName: site.name,
-    images: [
-      {
-        url: "/brand/app-icon.png",
-        width: 512,
-        height: 512,
-        alt: "MB Carrosserie Star",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary",
-    title: "MB Carrosserie Star | Carrosserie à Cornebarrieu",
-    description: site.description,
-    images: ["/brand/app-icon.png"],
+  publisher: site.legal.legalName,
+  category: "automotive",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AutoBodyShop",
+  "@id": `${site.url}/#entreprise`,
   name: site.name,
+  legalName: site.legal.legalName,
+  description: site.description,
+  url: site.url,
   email: site.email,
   telephone: site.phone.href.replace("tel:", ""),
+  image: [`${site.url}/brand/logo-hero.png`, `${site.url}/brand/app-icon.png`],
+  logo: `${site.url}/brand/logo-mark.png`,
+  priceRange: "€€",
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
     postalCode: site.address.postalCode,
-    addressLocality: "Cornebarrieu",
+    addressLocality: site.address.city,
+    addressRegion: "Occitanie",
     addressCountry: "FR",
   },
-  url: "https://mbcarrosseriestar.fr",
-  image: "/brand/app-icon.png",
+  hasMap: site.address.mapsUrl,
+  areaServed: [
+    { "@type": "City", name: "Cornebarrieu" },
+    { "@type": "City", name: "Toulouse" },
+    { "@type": "City", name: "Blagnac" },
+    { "@type": "City", name: "Colomiers" },
+  ],
+  sameAs: [site.tiktok.profileUrl],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    bestRating: "5",
+    reviewCount: String(reviews.length),
+  },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

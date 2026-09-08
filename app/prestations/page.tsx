@@ -4,11 +4,9 @@ import { PageHero } from "@/components/PageHero";
 import { Services } from "@/components/Services";
 import { Works } from "@/components/Works";
 
-export const metadata: Metadata = {
-  title: "Prestations",
-  description:
-    "Carrosserie, peinture auto, tôlerie et mécanique à Cornebarrieu. Réparations, mise en teinte, chocs et sinistres. Devis chez MB Carrosserie Star.",
-};
+import { pageMeta, pages } from "@/lib/seo";
+
+export const metadata: Metadata = pageMeta(pages.prestations);
 
 export default function PrestationsPage() {
   return (
@@ -18,8 +16,8 @@ export default function PrestationsPage() {
         title="Carrosserie, peinture, tôlerie, mécanique"
         text="Un seul atelier pour remettre votre véhicule en état — du petit choc du parking au sinistre plus lourd."
       />
-      <Services showIntro={false} />
       <Works />
+      <Services showIntro={false} />
       <CtaBand />
     </>
   );

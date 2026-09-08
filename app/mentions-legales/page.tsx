@@ -80,7 +80,7 @@ export default function MentionsLegalesPage() {
                     className="grid gap-1 py-4 sm:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] sm:gap-6"
                   >
                     <dt className="text-sm text-white/45">{label}</dt>
-                    <dd className="text-sm leading-relaxed text-white sm:text-right">
+                    <dd className="text-sm leading-relaxed break-words text-white sm:text-right">
                       {label === "Site" ? (
                         <a
                           href={value}

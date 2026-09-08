@@ -21,7 +21,7 @@ export function Contact() {
                     <a
                       key={phone.href}
                       href={phone.href}
-                      className="font-display block text-xl tracking-wide whitespace-nowrap text-brand-bright hover:text-white"
+                      className="font-display block text-lg tracking-wide text-brand-bright hover:text-white sm:text-xl"
                     >
                       {phone.display}
                     </a>
@@ -66,7 +66,7 @@ export function Contact() {
               </a>
               <a
                 href={`mailto:${site.email}`}
-                className="mt-3 block text-sm text-white/70 hover:text-white"
+                className="mt-3 block text-sm break-all text-white/70 hover:text-white"
               >
                 {site.email}
               </a>
@@ -76,7 +76,7 @@ export function Contact() {
               <iframe
                 title="Plan MB Carrosserie Star à Cornebarrieu"
                 src={site.address.embedUrl}
-                className="h-64 w-full grayscale contrast-125"
+                className="h-52 w-full grayscale contrast-125 sm:h-64"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />

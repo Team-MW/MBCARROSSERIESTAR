@@ -46,8 +46,8 @@ export function TikToks() {
         <p className="font-display text-sm tracking-[0.35em] text-brand-bright uppercase">
           TikTok
         </p>
-        <div className="mt-3 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-          <h2 className="font-display text-4xl tracking-wide sm:text-5xl">
+        <div className="mt-3 flex flex-col justify-between gap-3 sm:flex-row sm:items-end sm:gap-4">
+          <h2 className="font-display text-3xl tracking-wide sm:text-5xl">
             L’atelier en vidéo
           </h2>
           <a
@@ -64,11 +64,11 @@ export function TikToks() {
           volume).
         </p>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="tiktok-track mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 sm:mt-10 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:pb-0">
           {site.tiktok.videos.map((id, index) => (
             <div
               key={id}
-              className="overflow-hidden border border-white/10 bg-black"
+              className="w-[min(78vw,320px)] shrink-0 snap-start overflow-hidden border border-white/10 bg-black sm:w-auto sm:max-w-none sm:shrink"
             >
               <div className="relative aspect-[9/16]">
                 <iframe

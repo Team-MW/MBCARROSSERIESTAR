@@ -26,7 +26,7 @@ export function Faq() {
           FAQ
         </p>
         <div className="mt-3 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-          <h2 className="font-display text-4xl tracking-wide sm:text-5xl">
+          <h2 className="font-display text-3xl tracking-wide sm:text-5xl">
             Questions fréquentes
           </h2>
           <Link
@@ -40,11 +40,11 @@ export function Faq() {
         <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
           {faqs.map((item) => (
             <details key={item.q} className="faq-item group">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-display text-lg tracking-wide text-white select-none sm:text-xl">
-                <span>{item.q}</span>
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-3 py-4 font-display text-base tracking-wide text-white select-none sm:items-center sm:gap-4 sm:py-5 sm:text-xl">
+                <span className="min-w-0">{item.q}</span>
                 <span
                   aria-hidden="true"
-                  className="flex h-8 w-8 shrink-0 items-center justify-center border border-white/15 text-brand-bright transition group-open:rotate-45"
+                  className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center border border-white/15 text-brand-bright transition group-open:rotate-45 sm:mt-0"
                 >
                   +
                 </span>

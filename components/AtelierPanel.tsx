@@ -12,7 +12,7 @@ function Star() {
 export function AtelierPanel() {
   return (
     <aside className="border border-white/10 bg-black/50">
-      <div className="border-b border-white/10 px-6 py-5">
+      <div className="border-b border-white/10 px-4 py-4 sm:px-6 sm:py-5">
         <p className="font-display text-sm tracking-[0.28em] text-brand-bright uppercase">
           L’atelier
         </p>
@@ -23,7 +23,7 @@ export function AtelierPanel() {
           <li key={service.id} className="border-b border-white/10 last:border-b-0">
             <Link
               href={`/prestations#${service.id}`}
-              className="flex items-baseline justify-between gap-4 px-6 py-5 transition hover:bg-white/5"
+              className="flex items-baseline justify-between gap-4 px-4 py-4 transition hover:bg-white/5 sm:px-6 sm:py-5"
             >
               <span className="font-display text-lg tracking-wide text-white">
                 {service.title}
@@ -35,7 +35,7 @@ export function AtelierPanel() {
           </li>
         ))}
       </ol>
-      <div className="flex items-center justify-between gap-3 px-6 py-5">
+      <div className="flex items-center justify-between gap-3 px-4 py-4 sm:px-6 sm:py-5">
         <p className="text-sm text-white/55">Avis clients Google</p>
         <p className="font-display flex items-center gap-1 text-brand-bright">
           <Star />
@@ -54,7 +54,7 @@ export function AtelierSection() {
           <p className="font-display text-sm tracking-[0.35em] text-brand-bright uppercase">
             L’atelier
           </p>
-          <h2 className="font-display mt-3 text-4xl tracking-wide sm:text-5xl">
+          <h2 className="font-display mt-3 text-3xl tracking-wide sm:text-5xl">
             Quatre métiers, un seul passage
           </h2>
           <p className="mt-4 max-w-md text-white/65">

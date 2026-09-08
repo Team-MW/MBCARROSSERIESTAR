@@ -48,8 +48,8 @@ export function QuoteForm() {
       title="MB Carrosserie Star — formulaire de devis"
       allow="geolocation; microphone; camera; fullscreen; payment"
       src={src}
-      className="block w-full border-0 bg-transparent"
-      style={{ minWidth: "100%", height: 539 }}
+      className="block w-full max-w-full border-0 bg-transparent"
+      style={{ height: 539 }}
       scrolling="no"
     />
   );

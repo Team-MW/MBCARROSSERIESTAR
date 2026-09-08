@@ -17,7 +17,7 @@ export function Services({ preview = false, showIntro = true }: ServicesProps) {
               Prestations
             </p>
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-              <h2 className="font-display mt-3 text-4xl tracking-wide sm:text-5xl">
+              <h2 className="font-display mt-3 text-3xl tracking-wide sm:text-5xl">
                 Ce que l’atelier prend en charge
               </h2>
               {preview ? (

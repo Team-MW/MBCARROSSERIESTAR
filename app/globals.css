@@ -25,11 +25,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
+  overflow-x: hidden;
 }
 
 .bg-carbon {
@@ -91,5 +93,14 @@ body {
 }
 
 .review-track::-webkit-scrollbar {
+  display: none;
+}
+
+.tiktok-track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tiktok-track::-webkit-scrollbar {
   display: none;
 }

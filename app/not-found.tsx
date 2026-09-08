@@ -12,7 +12,7 @@ export default function NotFound() {
       <p className="mt-4 max-w-md text-white/60">
         Cette page n’existe pas. Retour à l’accueil ou demandez un devis.
       </p>
-      <div className="mt-8 flex gap-3">
+      <div className="mt-8 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
         <Link
           href="/"
           className="bg-brand px-5 py-3 font-semibold text-white hover:bg-brand-bright"

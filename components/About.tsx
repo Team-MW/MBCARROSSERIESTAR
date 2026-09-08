@@ -17,12 +17,12 @@ export function About({ preview = false, showIntro = true }: AboutProps) {
               <p className="font-display text-sm tracking-[0.35em] text-brand-bright uppercase">
                 L’atelier
               </p>
-              <h2 className="font-display mt-3 text-4xl tracking-wide sm:text-5xl">
+              <h2 className="font-display mt-3 text-3xl tracking-wide sm:text-5xl">
                 Un travail de carrossier, pas un passage à la chaîne
               </h2>
             </>
           ) : (
-            <h2 className="font-display text-4xl tracking-wide sm:text-5xl">
+            <h2 className="font-display text-3xl tracking-wide sm:text-5xl">
               Un travail de carrossier, pas un passage à la chaîne
             </h2>
           )}
@@ -60,7 +60,7 @@ export function About({ preview = false, showIntro = true }: AboutProps) {
               alt="Identité visuelle MB Carrosserie Star"
               width={1600}
               height={900}
-              className="h-auto w-full"
+              className="h-auto w-full max-w-full"
             />
           </div>
           {!preview ? (
@@ -70,7 +70,7 @@ export function About({ preview = false, showIntro = true }: AboutProps) {
                 alt="Carte de visite MB Carrosserie Star"
                 width={1200}
                 height={750}
-                className="h-auto w-full"
+                className="h-auto w-full max-w-full"
               />
             </div>
           ) : null}

@@ -99,7 +99,7 @@ export function Reviews({ preview = false, showIntro = true }: ReviewsProps) {
             <p className="font-display text-sm tracking-[0.35em] text-brand-bright uppercase">
               Avis Google
             </p>
-            <h2 className="font-display mt-3 text-4xl tracking-wide sm:text-5xl">
+            <h2 className="font-display mt-3 text-3xl tracking-wide sm:text-5xl">
               Ce que disent les clients
             </h2>
             <div className="mt-6 flex flex-col items-center gap-2">
@@ -155,7 +155,7 @@ export function Reviews({ preview = false, showIntro = true }: ReviewsProps) {
             type="button"
             aria-label="Avis précédent"
             onClick={() => scrollByCard(-1)}
-            className="absolute top-1/2 left-0 z-10 hidden h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-white/20 bg-black/80 text-xl text-white backdrop-blur-sm transition hover:border-brand hover:bg-brand sm:flex"
+            className="absolute top-1/2 left-2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 bg-black/80 text-xl text-white backdrop-blur-sm transition hover:border-brand hover:bg-brand md:flex"
           >
             ‹
           </button>
@@ -163,7 +163,7 @@ export function Reviews({ preview = false, showIntro = true }: ReviewsProps) {
             type="button"
             aria-label="Avis suivant"
             onClick={() => scrollByCard(1)}
-            className="absolute top-1/2 right-0 z-10 hidden h-11 w-11 translate-x-1/2 -translate-y-1/2 items-center justify-center border border-white/20 bg-brand text-xl text-white transition hover:bg-brand-bright sm:flex"
+            className="absolute top-1/2 right-2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/20 bg-brand text-xl text-white transition hover:bg-brand-bright md:flex"
           >
             ›
           </button>
@@ -175,7 +175,7 @@ export function Reviews({ preview = false, showIntro = true }: ReviewsProps) {
             {items.map((review, index) => (
               <blockquote
                 key={review.name}
-                className="flex min-h-[280px] w-[min(88vw,360px)] shrink-0 snap-start flex-col border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-6 text-left"
+                className="flex min-h-[260px] w-[min(85vw,340px)] shrink-0 snap-start flex-col border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-5 text-left sm:min-h-[280px] sm:p-6"
               >
                 <div className="flex items-start gap-3">
                   <span
@@ -205,7 +205,7 @@ export function Reviews({ preview = false, showIntro = true }: ReviewsProps) {
             ))}
           </div>
 
-          <div className="mt-6 flex items-center justify-center gap-2 sm:hidden">
+          <div className="mt-6 flex items-center justify-center gap-2 md:hidden">
             <button
               type="button"
               aria-label="Avis précédent"

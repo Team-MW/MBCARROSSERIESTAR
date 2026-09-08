@@ -37,11 +37,11 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <Logo size={44} priority className="h-11 w-11" />
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-[15px] font-semibold tracking-[0.14em] text-brand-bright sm:text-base">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-4 sm:h-[4.5rem] sm:px-6">
+        <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3" onClick={() => setOpen(false)}>
+          <Logo size={44} priority className="h-8 w-8 shrink-0 sm:h-11 sm:w-11" />
+          <span className="flex min-w-0 flex-col leading-none">
+            <span className="font-display text-[12px] font-semibold tracking-[0.08em] text-brand-bright sm:text-base sm:tracking-[0.14em]">
               MB CARROSSERIE STAR
             </span>
             <span className="mt-1 hidden text-[10px] tracking-[0.22em] text-white/55 uppercase sm:block">
@@ -72,7 +72,7 @@ export function Header() {
 
         <Link
           href="/contact"
-          className="hidden bg-brand px-4 py-2 text-sm font-semibold tracking-wide text-white transition hover:bg-brand-bright sm:inline-flex"
+          className="hidden bg-brand px-4 py-2 text-sm font-semibold tracking-wide text-white transition hover:bg-brand-bright lg:inline-flex"
         >
           Devis
         </Link>
@@ -100,7 +100,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-white/10 bg-black/95 lg:hidden">
+        <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/10 bg-black/95 pb-28 lg:hidden">
           <div className="mx-auto flex max-w-6xl flex-col px-4 py-6">
             {nav.map((item) => (
               <Link

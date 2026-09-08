@@ -14,7 +14,7 @@ export function Logo({ className = "", size = 48, priority = false }: LogoProps)
       width={size}
       height={size}
       priority={priority}
-      className={`h-auto w-auto object-contain ${className}`}
+      className={`object-contain ${className}`}
     />
   );
 }

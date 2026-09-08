@@ -18,6 +18,13 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover" as const,
+};
+
 export const metadata: Metadata = {
   title: {
     default: "MB Carrosserie Star | Carrosserie à Cornebarrieu",
@@ -76,7 +83,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="fr"
       className={`${oswald.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="bg-carbon flex min-h-full flex-col font-sans">
+      <body className="bg-carbon flex min-h-full flex-col overflow-x-hidden font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

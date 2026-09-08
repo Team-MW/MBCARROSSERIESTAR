@@ -128,6 +128,68 @@ export const services = [
   },
 ] as const;
 
+export const works = [
+  {
+    id: "bmw-blanc",
+    title: "BMW blanc",
+    text: "Pare-chocs avant, calandre et arrière : choc, peinture, rendu d’origine.",
+    pairs: [
+      {
+        label: "Face avant",
+        before: {
+          src: "/realisations/bmw-face-avant.webp",
+          alt: "BMW blanc, face avant avant réparation",
+          width: 425,
+          height: 510,
+        },
+        after: {
+          src: "/realisations/bmw-face-apres.webp",
+          alt: "BMW blanc, face avant après réparation",
+          width: 665,
+          height: 510,
+        },
+      },
+      {
+        label: "Arrière",
+        before: {
+          src: "/realisations/bmw-arriere-avant.webp",
+          alt: "BMW blanc, arrière avant réparation",
+          width: 382,
+          height: 510,
+        },
+        after: {
+          src: "/realisations/bmw-arriere-apres.webp",
+          alt: "BMW blanc, arrière après réparation",
+          width: 287,
+          height: 510,
+        },
+      },
+    ],
+  },
+  {
+    id: "clio-grise",
+    title: "Clio grise",
+    text: "Portière et bas de caisse : débosselage, peinture, finition propre.",
+    pairs: [
+      {
+        label: "Côté",
+        before: {
+          src: "/realisations/clio-avant.webp",
+          alt: "Clio grise, côté avant réparation",
+          width: 680,
+          height: 510,
+        },
+        after: {
+          src: "/realisations/clio-apres.webp",
+          alt: "Clio grise, côté après réparation",
+          width: 287,
+          height: 510,
+        },
+      },
+    ],
+  },
+] as const;
+
 export const strengths = [
   {
     title: "Qualité d’atelier",

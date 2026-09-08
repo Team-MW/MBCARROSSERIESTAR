@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { Services } from "@/components/Services";
+import { Works } from "@/components/Works";
 
 export const metadata: Metadata = {
   title: "Prestations",
@@ -18,6 +19,7 @@ export default function PrestationsPage() {
         text="Un seul atelier pour remettre votre véhicule en état — du petit choc du parking au sinistre plus lourd."
       />
       <Services showIntro={false} />
+      <Works />
       <CtaBand />
     </>
   );

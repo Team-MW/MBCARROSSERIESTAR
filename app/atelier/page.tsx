@@ -4,6 +4,7 @@ import { AddressLink } from "@/components/AddressLink";
 import { CtaBand } from "@/components/CtaBand";
 import { Loaner } from "@/components/Loaner";
 import { PageHero } from "@/components/PageHero";
+import { Works } from "@/components/Works";
 import { WorkshopGallery } from "@/components/WorkshopGallery";
 import { pageMeta, pages } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -26,6 +27,7 @@ export default function AtelierPage() {
         }
       />
       <About showIntro={false} />
+      <Works />
       <WorkshopGallery />
       <Loaner />
       <CtaBand />

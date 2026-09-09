@@ -6,7 +6,6 @@ import { Loaner } from "@/components/Loaner";
 import { Reviews } from "@/components/Reviews";
 import { Services } from "@/components/Services";
 import { TikToks } from "@/components/TikToks";
-import { Works } from "@/components/Works";
 import { WorkshopGallery } from "@/components/WorkshopGallery";
 import { pageMeta, pages } from "@/lib/seo";
 
@@ -34,7 +33,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Works preview />
       <WorkshopGallery />
       <Loaner />
       <Services preview />

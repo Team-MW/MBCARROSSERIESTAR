@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AddressLink } from "@/components/AddressLink";
 import { Contact } from "@/components/Contact";
 import { PageHero } from "@/components/PageHero";
+import { Works } from "@/components/Works";
 
 import { pageMeta, pages } from "@/lib/seo";
 
@@ -24,6 +25,7 @@ export default function ContactPage() {
         }
       />
       <Contact />
+      <Works />
     </>
   );
 }

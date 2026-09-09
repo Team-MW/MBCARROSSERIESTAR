@@ -113,6 +113,12 @@ export const services = [
       "Vernis brillant, rendu neuf",
       "Finition soignée des joints et bords",
     ],
+    photo: {
+      src: "/atelier/masquage-peinture.avif",
+      alt: "Préparation et masquage avant peinture",
+      width: 1400,
+      height: 933,
+    },
   },
   {
     id: "tolerie",
@@ -209,6 +215,37 @@ export const works = [
 export const workPhotos = works.flatMap((job) =>
   job.pairs.flatMap((pair) => [pair.before, pair.after]),
 );
+
+export const atelierPhotos = [
+  {
+    src: "/atelier/parechoc-preparation.avif",
+    alt: "Préparation d’un pare-chocs avant peinture",
+    label: "Préparation",
+    width: 1400,
+    height: 933,
+  },
+  {
+    src: "/atelier/masquage-peinture.avif",
+    alt: "Masquage soigné avant mise en peinture",
+    label: "Peinture",
+    width: 1400,
+    height: 933,
+  },
+  {
+    src: "/atelier/poncage.avif",
+    alt: "Ponçage de carrosserie en atelier",
+    label: "Ponçage",
+    width: 1400,
+    height: 934,
+  },
+  {
+    src: "/atelier/lustrage.avif",
+    alt: "Lustrage et finition de la carrosserie",
+    label: "Finition",
+    width: 1400,
+    height: 932,
+  },
+] as const;
 
 export const strengths = [
   {

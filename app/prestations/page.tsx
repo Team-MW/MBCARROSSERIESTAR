@@ -3,6 +3,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { Services } from "@/components/Services";
 import { Works } from "@/components/Works";
+import { WorkshopGallery } from "@/components/WorkshopGallery";
 
 import { pageMeta, pages } from "@/lib/seo";
 
@@ -17,6 +18,7 @@ export default function PrestationsPage() {
         text="Un seul atelier pour remettre votre véhicule en état — du petit choc du parking au sinistre plus lourd."
       />
       <Works />
+      <WorkshopGallery />
       <Services showIntro={false} />
       <CtaBand />
     </>

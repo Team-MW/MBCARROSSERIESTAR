@@ -57,7 +57,11 @@ export function Services({ preview = false, showIntro = true }: ServicesProps) {
                       className="object-cover"
                     />
                     <span className="absolute top-2 left-2 bg-brand px-2 py-0.5 font-display text-[10px] tracking-[0.18em] text-white uppercase">
-                      {service.id === "tolerie" ? "Redressage" : "Avant"}
+                      {service.id === "tolerie"
+                        ? "Redressage"
+                        : service.id === "peinture"
+                          ? "Préparation"
+                          : "Avant"}
                     </span>
                   </div>
                 ) : (

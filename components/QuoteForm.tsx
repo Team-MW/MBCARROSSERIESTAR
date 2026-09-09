@@ -5,10 +5,31 @@ import { site } from "@/lib/site";
 
 export function QuoteForm() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const src = `https://form.jotform.com/${site.jotformId}?isIframeEmbed=1`;
 
   useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setVisible(true);
+        observer.disconnect();
+      },
+      { rootMargin: "320px" },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+
     const fallback = window.setTimeout(() => setLoaded(true), 8000);
 
     function onMessage(event: MessageEvent) {
@@ -47,10 +68,10 @@ export function QuoteForm() {
       window.clearTimeout(fallback);
       window.removeEventListener("message", onMessage);
     };
-  }, []);
+  }, [visible]);
 
   return (
-    <div className="relative min-h-[28rem] w-full">
+    <div ref={wrapRef} className="relative min-h-[28rem] w-full">
       {!loaded ? (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-black">
           <span
@@ -62,19 +83,22 @@ export function QuoteForm() {
           </p>
         </div>
       ) : null}
-      <iframe
-        ref={iframeRef}
-        id={site.jotformId}
-        title="MB Carrosserie Star — formulaire de devis"
-        allow="geolocation; microphone; camera; fullscreen; payment"
-        src={src}
-        onLoad={() => setLoaded(true)}
-        className={`block w-full max-w-full border-0 bg-transparent transition-opacity duration-300 ${
-          loaded ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ height: 539 }}
-        scrolling="no"
-      />
+      {visible ? (
+        <iframe
+          ref={iframeRef}
+          id={site.jotformId}
+          title="MB Carrosserie Star — formulaire de devis"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src={src}
+          onLoad={() => setLoaded(true)}
+          loading="lazy"
+          className={`block w-full max-w-full border-0 bg-transparent transition-opacity duration-300 ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ height: 539 }}
+          scrolling="no"
+        />
+      ) : null}
     </div>
   );
 }

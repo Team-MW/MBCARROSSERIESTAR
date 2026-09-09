@@ -34,7 +34,7 @@ const faqLd = {
 
 export function Faq() {
   return (
-    <section id="faq" className="scroll-mt-24 border-t border-white/10 py-20 sm:py-24">
+    <section id="faq" className="cv-auto scroll-mt-24 border-t border-white/10 py-20 sm:py-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}

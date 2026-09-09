@@ -36,18 +36,6 @@ body {
 
 .bg-carbon {
   background-color: #070707;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    repeating-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.02) 0 1px,
-      transparent 1px 7px
-    );
-  background-size:
-    18px 18px,
-    18px 18px,
-    10px 10px;
 }
 
 .red-glow {
@@ -103,4 +91,9 @@ body {
 
 .tiktok-track::-webkit-scrollbar {
   display: none;
+}
+
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 640px;
 }

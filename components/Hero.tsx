@@ -6,9 +6,9 @@ import { services, site } from "@/lib/site";
 export function Hero() {
   return (
     <section id="accueil" className="bg-carbon relative flex min-h-[70vh] items-center overflow-hidden pt-24 pb-14 sm:min-h-[80vh] sm:pt-28 sm:pb-20">
-      <div className="pointer-events-none absolute inset-0">
+        <div className="pointer-events-none absolute inset-0">
         <Image
-          src="/hero/fond.webp"
+          src="/hero/fond.avif"
           alt=""
           fill
           priority
@@ -17,7 +17,6 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/70" />
-        <div className="absolute top-1/2 left-1/2 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/10 blur-[120px]" />
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-4 text-center sm:px-6">

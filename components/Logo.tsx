@@ -9,11 +9,12 @@ type LogoProps = {
 export function Logo({ className = "", size = 48, priority = false }: LogoProps) {
   return (
     <Image
-      src="/brand/logo-mark.png"
+      src="/brand/logo-mark.avif"
       alt="MB Carrosserie Star"
       width={size}
       height={size}
       priority={priority}
+      sizes={`${size}px`}
       className={`object-contain ${className}`}
     />
   );

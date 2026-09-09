@@ -6,6 +6,7 @@ import { Loaner } from "@/components/Loaner";
 import { Reviews } from "@/components/Reviews";
 import { Services } from "@/components/Services";
 import { TikToks } from "@/components/TikToks";
+import { Works } from "@/components/Works";
 import { pageMeta, pages } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta(pages.home);
@@ -32,12 +33,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Works preview />
       <Loaner />
-      <TikToks />
       <Services preview />
       <About preview />
-      <Reviews />
+      <Reviews preview />
       <CtaBand />
+      <TikToks />
     </>
   );
 }

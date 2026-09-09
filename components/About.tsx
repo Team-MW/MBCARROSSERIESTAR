@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { strengths } from "@/lib/site";
+import { strengths, workPhotos } from "@/lib/site";
 
 type AboutProps = {
   preview?: boolean;
@@ -54,26 +54,57 @@ export function About({ preview = false, showIntro = true }: AboutProps) {
         </div>
 
         <div className="space-y-4">
-          <div className="overflow-hidden border border-white/10 bg-black">
-            <Image
-              src="/brand/logo-hero.png"
-              alt="Identité visuelle MB Carrosserie Star"
-              width={1600}
-              height={900}
-              className="h-auto w-full max-w-full"
-            />
-          </div>
-          {!preview ? (
+          {preview ? (
             <div className="overflow-hidden border border-white/10 bg-black">
               <Image
-                src="/logo.png"
-                alt="Carte de visite MB Carrosserie Star"
-                width={1200}
-                height={750}
+                src="/brand/logo-hero.avif"
+                alt="Identité visuelle MB Carrosserie Star"
+                width={1400}
+                height={933}
+                sizes="(max-width: 1024px) 100vw, 560px"
                 className="h-auto w-full max-w-full"
               />
             </div>
-          ) : null}
+          ) : (
+            <>
+              <div className="overflow-hidden border border-white/10 bg-black">
+                <Image
+                  src="/brand/logo-hero.avif"
+                  alt="Identité visuelle MB Carrosserie Star"
+                  width={1400}
+                  height={933}
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                  className="h-auto w-full max-w-full"
+                />
+              </div>
+              <div className="overflow-hidden border border-white/10 bg-black">
+                <Image
+                  src="/logo.avif"
+                  alt="Carte de visite MB Carrosserie Star"
+                  width={563}
+                  height={381}
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                  className="h-auto w-full max-w-full"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {workPhotos.map((shot) => (
+                  <div
+                    key={shot.src}
+                    className="relative aspect-[4/5] overflow-hidden border border-white/10 bg-black"
+                  >
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 280px"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>

@@ -93,7 +93,7 @@ export function Reviews({ preview = false, showIntro = true }: ReviewsProps) {
   }, []);
 
   return (
-    <section className="border-t border-white/10 py-20 sm:py-28">
+    <section className="cv-auto border-t border-white/10 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {showIntro ? (
           <div className="mx-auto max-w-2xl text-center">

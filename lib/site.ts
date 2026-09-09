@@ -96,6 +96,12 @@ export const services = [
       "Pare-chocs et éléments plastiques",
       "Remise en ligne après accident",
     ],
+    photo: {
+      src: "/realisations/bmw-face-avant.avif",
+      alt: "BMW blanc, choc avant avant carrosserie",
+      width: 425,
+      height: 510,
+    },
   },
   {
     id: "peinture",
@@ -118,6 +124,12 @@ export const services = [
       "Travail de structure",
       "Contrôle après choc important",
     ],
+    photo: {
+      src: "/realisations/clio-avant.avif",
+      alt: "Clio grise, portière enfoncée avant redressage",
+      width: 680,
+      height: 510,
+    },
   },
   {
     id: "mecanique",
@@ -141,13 +153,13 @@ export const works = [
       {
         label: "Face avant",
         before: {
-          src: "/realisations/bmw-face-avant.webp",
+          src: "/realisations/bmw-face-avant.avif",
           alt: "BMW blanc, face avant avant réparation",
           width: 425,
           height: 510,
         },
         after: {
-          src: "/realisations/bmw-face-apres.webp",
+          src: "/realisations/bmw-face-apres.avif",
           alt: "BMW blanc, face avant après réparation",
           width: 665,
           height: 510,
@@ -156,13 +168,13 @@ export const works = [
       {
         label: "Arrière",
         before: {
-          src: "/realisations/bmw-arriere-avant.webp",
+          src: "/realisations/bmw-arriere-avant.avif",
           alt: "BMW blanc, arrière avant réparation",
           width: 382,
           height: 510,
         },
         after: {
-          src: "/realisations/bmw-arriere-apres.webp",
+          src: "/realisations/bmw-arriere-apres.avif",
           alt: "BMW blanc, arrière après réparation",
           width: 287,
           height: 510,
@@ -178,13 +190,13 @@ export const works = [
       {
         label: "Côté",
         before: {
-          src: "/realisations/clio-avant.webp",
+          src: "/realisations/clio-avant.avif",
           alt: "Clio grise, côté avant réparation",
           width: 680,
           height: 510,
         },
         after: {
-          src: "/realisations/clio-apres.webp",
+          src: "/realisations/clio-apres.avif",
           alt: "Clio grise, côté après réparation",
           width: 287,
           height: 510,
@@ -193,6 +205,10 @@ export const works = [
     ],
   },
 ] as const;
+
+export const workPhotos = works.flatMap((job) =>
+  job.pairs.flatMap((pair) => [pair.before, pair.after]),
+);
 
 export const strengths = [
   {

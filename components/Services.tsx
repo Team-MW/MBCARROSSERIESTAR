@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { serviceIcons } from "@/components/BrandMark";
 import { services } from "@/lib/site";
@@ -39,31 +40,51 @@ export function Services({ preview = false, showIntro = true }: ServicesProps) {
         <div className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ${showIntro ? "mt-12" : ""}`}>
           {services.map((service) => {
             const Icon = serviceIcons[service.id];
+            const photo = "photo" in service ? service.photo : null;
             return (
               <article
                 key={service.id}
                 id={service.id}
-                className="group scroll-mt-28 border border-white/10 bg-white/[0.03] p-6 transition hover:border-brand/60 hover:bg-white/[0.05]"
+                className="group scroll-mt-28 overflow-hidden border border-white/10 bg-white/[0.03] transition hover:border-brand/60 hover:bg-white/[0.05]"
               >
-                <div className="flex h-12 w-12 items-center justify-center border border-white/15 text-white group-hover:border-brand group-hover:text-brand-bright">
-                  <Icon className="h-7 w-7" />
+                {photo ? (
+                  <div className="relative aspect-[4/5] bg-black">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
+                      className="object-cover"
+                    />
+                    <span className="absolute top-2 left-2 bg-brand px-2 py-0.5 font-display text-[10px] tracking-[0.18em] text-white uppercase">
+                      {service.id === "tolerie" ? "Redressage" : "Avant"}
+                    </span>
+                  </div>
+                ) : (
+                  <div className="p-6 pb-0">
+                    <div className="flex h-12 w-12 items-center justify-center border border-white/15 text-white group-hover:border-brand group-hover:text-brand-bright">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                  </div>
+                )}
+                <div className="p-6">
+                  <h3 className="font-display text-2xl tracking-wide">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/65">
+                    {service.text}
+                  </p>
+                  {!preview ? (
+                    <ul className="mt-5 space-y-2 text-sm text-white/55">
+                      {service.points.map((point) => (
+                        <li key={point} className="flex gap-2">
+                          <span className="text-brand-bright">▸</span>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
-                <h3 className="font-display mt-5 text-2xl tracking-wide">
-                  {service.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
-                  {service.text}
-                </p>
-                {!preview ? (
-                  <ul className="mt-5 space-y-2 text-sm text-white/55">
-                    {service.points.map((point) => (
-                      <li key={point} className="flex gap-2">
-                        <span className="text-brand-bright">▸</span>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
               </article>
             );
           })}

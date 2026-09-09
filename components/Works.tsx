@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { works } from "@/lib/site";
 
 function Pair({
@@ -33,7 +34,7 @@ function Pair({
   );
 }
 
-export function Works() {
+export function Works({ preview = false }: { preview?: boolean }) {
   return (
     <section className="border-t border-white/10 bg-black/40 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -44,9 +45,17 @@ export function Works() {
           Avant / après
         </h2>
         <p className="mt-4 max-w-2xl text-white/65">
-          Quelques chantiers de l’atelier : carrosserie et peinture, du choc au
-          rendu d’origine.
+          Quelques chantiers de l’atelier : carrosserie, redressage et peinture,
+          du choc au rendu d’origine.
         </p>
+        {preview ? (
+          <Link
+            href="/prestations"
+            className="mt-4 inline-flex text-sm font-medium text-brand-bright underline-offset-4 hover:underline"
+          >
+            Voir toutes les réalisations
+          </Link>
+        ) : null}
 
         <div className="mt-12 space-y-14">
           {works.map((job) => (
